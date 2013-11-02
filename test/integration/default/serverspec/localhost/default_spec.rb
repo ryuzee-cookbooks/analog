@@ -1,6 +1,4 @@
 require 'serverspec'
-#require 'spec_helper'
-#require 'pathname'
 include Serverspec::Helper::Exec
 include Serverspec::Helper::DetectOS
 
@@ -10,24 +8,6 @@ RSpec.configure do |c|
   end
   c.path = "/sbin:/user/sbin"
 end
-
-describe command( "echo 'hello'" ) do
-  it { should return_exit_status 0 }
-  it { should return_stdout 'hello' }
-end
-
-describe package('httpd') do
-    it { should_not be_installed }
-end
-
-#describe service('httpd') do
-#  it { should_not be_enabled }
-#  it { should_not be_running }
-#end
-
-#describe port(80) do
-#  it { should_not be_listening }
-#end
 
 describe file('/usr/bin/analog') do
   it { should be_file }
