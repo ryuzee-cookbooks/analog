@@ -4,7 +4,6 @@ driver_config:
   require_chef_omnibus: true
 busser:
   sudo: true
-vagrantfile_erb: ./Vagrantfile.erb
 
 platforms:
 - name: centos-6.4
